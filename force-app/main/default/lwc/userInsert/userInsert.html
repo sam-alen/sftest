@@ -1,0 +1,20 @@
+<template>
+    <lightning-button label="Insertar" onclick={handleInsert}></lightning-button>
+    <lightning-button label="Eliminar" onclick={handleDelete} variant="destructive"></lightning-button>
+
+    <template if:true={users}>
+        <lightning-datatable
+            key-field="Id"
+            data={users}
+            columns={columns}
+            oncellchange={handleCellChange}
+            onrowselection={handleRowSelection}
+        ></lightning-datatable>
+    </template>
+
+    <template if:true={error}>
+        <div class="slds-text-color_error">
+            <p>{error.message}</p>
+        </div>
+    </template>
+</template>

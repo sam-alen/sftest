@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Product inventory">
+        <div>
+            <lightning-input type="text" label="Product Name" onchange={handleProductName}></lightning-input>
+            <lightning-input type="text" label="Category" onchange={handleCategoryName}></lightning-input>
+            <lightning-button label="Add Product" onclick={handleAddProduct}></lightning-button>
+            <template if:true={errorMessage}>
+                <p class="error">{errorMessage}</p>
+            </template>
+        </div>
+
+        <div>
+            <lightning-button label="Refresh" onclick={handleRefreshProducts}></lightning-button>
+            <template if:true={products}>
+                <template for:each={products} for:item="product">
+                    <p key={product.Id}>
+                        <strong>{product.Name}</strong> / <strong>{product.Category__c}</strong>
+                    </p>
+                </template>
+                <p>Total Products: {totalProducts}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

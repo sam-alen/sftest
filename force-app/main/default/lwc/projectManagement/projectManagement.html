@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Gestión de Tareas del Proyecto" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <c-project-tasks project-id={projectId} ontaskadded={handleTaskAdded}></c-project-tasks>
+
+            <c-task-form project-id={projectId} ontaskadded={handleTaskAdded}></c-task-form>
+        </div>
+    </lightning-card>
+</template>

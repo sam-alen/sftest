@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Tarea del Proyecto">
+        <template if:true={tasks.length}>
+            <ul>
+                <template for:each={tasks} for:item="task">
+                    <li key={task.Id}>
+                        <p>{task.name}</p>
+                        <p>{task.Description__c}</p>
+                        <p>Limit Due: {task.Due_Date__c}</p>
+                        <p>State: {task.Status__c}</p>
+                        <lightning-button
+                            label="Mark as Completed"
+                            onclick={handleMarkAsCompleted}
+                            data-id={task.Id}
+                        >
+                        </lightning-button>
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <template if:true={error}>
+            <p>Errro: {error}</p>
+        </template>
+        <template if:true={loading}>
+            <lightning-spinner alternative-text="Loading Task..."></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

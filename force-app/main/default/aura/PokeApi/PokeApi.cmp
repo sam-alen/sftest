@@ -1,0 +1,28 @@
+<aura:component controller="PokemonController" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="pokemon" type="Object" default="{}" />
+    <aura:attribute name="searchTerm" type="String" default="" />
+    
+    <lightning:card title="Búsqueda de Pokémon">
+        <div class="slds-p-around_medium">
+            <lightning:input label="Nombre del Pokémon" value="{!v.searchTerm}" />
+            <lightning:button label="Buscar Pokémon" onclick="{!c.searchPokemon}" class="slds-m-top_small" />
+            <lightning:button label="Pokémon Aleatorio" onclick="{!c.getRandomPokemon}" class="slds-m-top_small slds-m-left_small" />
+        </div>
+    </lightning:card>
+    
+    <aura:if isTrue="{!not(empty(v.pokemon))}">
+        <lightning:card title="{!v.pokemon.name}" iconName="standard:avatar">
+            <div class="slds-p-around_medium">
+                <img src="{!v.pokemon.sprites.front_default}" alt="{!v.pokemon.name}" />
+                <p>Altura: {!v.pokemon.height}</p>
+                <p>Peso: {!v.pokemon.weight}</p>
+                <p>Tipos:</p>
+                <ul>
+                    <aura:iteration items="{!v.pokemon.types}" var="type">
+                        <li>{!type.type.name}</li>
+                    </aura:iteration>
+                </ul>
+            </div>
+        </lightning:card>
+    </aura:if>
+</aura:component>

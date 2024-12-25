@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="mensaje" type="String" default="¡Hola, Aura desde Aca!" />
+    <div>{!v.mensaje}</div>
+</aura:component>

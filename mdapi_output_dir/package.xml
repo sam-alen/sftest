@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>MiClaseApex</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>MiComponente</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>alarmClockApp</members>
+        <members>bmiCalculator</members>
+        <members>clockDropdown</members>
+        <members>countryCodeList</members>
+        <members>currencyConverterApp</members>
+        <members>inventoryComponent</members>
+        <members>pokemonData</members>
+        <members>portfolioBanner</members>
+        <members>projectManagement</members>
+        <members>projectTasks</members>
+        <members>taskForm</members>
+        <members>userInsert</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>61.0</version>
+</Package>

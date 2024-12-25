@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <!-- Definir el atributo para el saludo actual -->
+    <aura:attribute name="saludo" type="String" default="¡Hola, Aura!" />
+    
+    <!-- Definir el atributo para el nuevo saludo -->
+    <aura:attribute name="nuevoSaludo" type="String" />
+    
+    <div>
+        <h1>{!v.saludo}</h1>
+    </div>
+    
+    <div>
+        <!-- Vincular el atributo nuevoSaludo al valor del campo de entrada -->
+        <lightning:input label="Nuevo saludo" value="{!v.nuevoSaludo}" />
+    </div>
+    
+    <lightning:button label="Actualizar Saludo" onclick="{!c.actualizarSaludo}" />
+</aura:component>
